@@ -7,7 +7,7 @@
       @fetch-products="fetchProducts" />
     <span v-else-if="!products && !loading">No products</span>
     <div v-else-if="loading" id="loading"></div>
-    <div class="select-bottom">
+    <div v-if="products && !loading" class="select-bottom">
       <label for="category">Rows per page:</label>
       <select v-model="pagination.limit" id="category" @change="fetchProducts" class="rows-per-page">
         <option :value="5">5</option>
